@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import Login from './Page/Login'
-import Register from './Page/Register'
+import Login from './Page/Auth/Login/Login'
+import Register from './Page/Auth/Register/Register'
 import ProtectedRoute from "./Component/ProtectedRoute";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";

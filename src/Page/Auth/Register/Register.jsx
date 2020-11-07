@@ -48,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp() {
   const classes = useStyles();
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [cpassword, setCpassword] = React.useState('');
 
   return (
     <Container component="main" maxWidth="xs">
@@ -61,38 +65,30 @@ export default function SignUp() {
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 autoComplete="fname"
-                name="firstName"
+                name="name"
                 variant="outlined"
+                value={name}
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
+                id="name"
+                label="name"
                 autoFocus
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
-                autoComplete="lname"
-              />
-            </Grid>
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
+                value={email}
                 id="email"
                 label="Email Address"
                 name="email"
-                autoComplete="email"
+                autoComplete="name"
               />
             </Grid>
             <Grid item xs={12}>
@@ -101,7 +97,21 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
+                value={password}
                 label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="cpassword"
+                value={cpassword}
+                label="Password Confirmation"
                 type="password"
                 id="password"
                 autoComplete="current-password"
